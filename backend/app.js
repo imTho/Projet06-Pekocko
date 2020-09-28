@@ -2,14 +2,19 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const path = require('path');
+const helmet = require('helmet');
 
 const sauceRoutes = require('./routes/sauce');
 const userRoutes = require('./routes/user');
+require('dotenv').config();
 
 const app = express();
 
+//Helmet protection des headers
+app.use(helmet());
+
 //Connexion à la base de donnée
-mongoose.connect('mongodb+srv://TheoEschlimann:vuBuQy2juRo7v3Ej@cluster0.wswys.mongodb.net/<dbname>?retryWrites=true&w=majority', {
+mongoose.connect(`mongodb+srv://${process.env.USER}:${process.env.MDP}@${process.env.HOST}/<dbname>?retryWrites=true&w=majority`, {
         useNewUrlParser: true,
         useUnifiedTopology: true
     })
