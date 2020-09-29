@@ -1,15 +1,19 @@
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 
+
 const User = require('../models/user');
 
 //Inscription
 exports.signup = (req, res, next) => {
+    //Cryptage Email
+    const buffer = Buffer.from(req.body.email);
+    const cryptedEmail = buffer.toString('base64');
     //Cryptage du MDP
     bcrypt.hash(req.body.password, 10)
         .then(hash => {
             const user = new User({
-                email: req.body.email,
+                email: cryptedEmail,
                 password: hash
             });
             //Sauvegarde de l'utilisateur dans la BDD
@@ -28,9 +32,11 @@ exports.signup = (req, res, next) => {
 
 //Connexion
 exports.login = (req, res, next) => {
+    const buffer = Buffer.from(req.body.email);
+    const cryptedEmail = buffer.toString('base64');
     //Recherche de l'utilisateur dans la BDD
     User.findOne({
-            email: req.body.email
+            email: cryptedEmail
         })
         .then(user => {
             if (!user) {
