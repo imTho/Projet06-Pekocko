@@ -1,6 +1,6 @@
 # Projet06-Pekocko
 
-##Project Setup
+## Project Setup
 
 ### Front-end setup
 Make sure to have Angular
