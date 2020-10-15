@@ -1,7 +1,7 @@
 # [Formation OpenClassRooms](https://openclassrooms.com/fr/paths/185-developpeur-web)
 ## Projet06-Pekocko - Création d'une API sécurisée et assurer en interne la bonne gestion des données
 
-[Résultat final]()
+![](presentation_gif.gif)
 
 ### Compétences professionnelles :
 
