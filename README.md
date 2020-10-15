@@ -3,6 +3,8 @@
 
 ![](presentation_gif.gif)
 
+(Sur ce projet seule la partie back-end était à réaliser, la partie front était fournie par Openclassrooms)
+
 ### Compétences professionnelles :
 
 - Implémenter un modèle logique de données conformément à la réglementation (API REST)
